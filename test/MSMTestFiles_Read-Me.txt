@@ -1,0 +1,66 @@
+	The MSM test files are written to run in a Truffle / Ganache environment. 
+	
+	.env is the file in the root directory of the application that contains a few important
+		variables that govern the configuration of that environment. 
+		
+	truffle-config.js in the root directory configures Truffle, 
+		as you might have guessed from its name. For more information, 
+		consult Truffle documentation. 
+		
+	web3.js in the root directory configures Web3. 
+		If the browser in which the application is running contains a Web3 injector, 
+		such as MetaMask, then it is used as the provider. 
+		Otherwise, the provider defaults to the Rinkeby test network. 
+		This default can be changed to another network by editing this file. 
+		
+	All of the following 
+		
+	MSMDeployedAddresses.js contains the addresses of deployed contracts that will be used 
+		by the various JavaSCcript test scripts. The addresses in this file MUST correspond 
+		to the contracts deployed on the current network. 
+		
+	MSMFacade.create.js creates and deploys an ERC 1538-compliant transparent contract, 
+		which we call a 'facade'. To create the facade, this script uses a factory contract 
+		that previously has been deployed and its address captured. 
+		The script displays the address to which the new facade contract has been deployed 
+		in a log message written to the console. 
+		The factory maintains a list of all of the facades that it has deployed.
+		
+	The facade contains delegated functions that are contained in delegate contracts. 
+		The delegate contracts and the delegated functions that they contain are written 
+		in the Solidity programming language. 
+	
+	Most files have in their name fragments of contract names (e.g. 'Mngr' for Manager, 'Pubn' for 
+		Publication) that suggest the primary target of the tests contained in the file. 
+	
+	Files with '.add' in their name (e.g. 'MSMMngr.add') contain scripts that add to the facade 
+		references to delegated functions contained in the corresponding contracts. 
+	
+	Files with '.test' in their name (e.g. 'MSMMngr.test') contain scripts that execute Mocha tests 
+		of the various delegated functions that are contained in the target delegate contract. 
+		Individual tests can and should be enabled and disabled in successive executions of the script, 
+		as appropriate to the progress of the test process. User discretion is advised. 
+		
+	The script in the file MSMFuncs.list producecs a list of all of the delegated functions 
+		known to the facade, along with the deployed address of the delegate contract that 
+		contains each delegated function. The list can be displayed in several formats, 
+		and code within the script can be enabled or disabled to select the desired format; 
+		specific instructions are contained in comments within the file. 
+		
+	The script in the file MSMFuncs.remove removes delegated functions from the facade. The removal can be
+		made on one of two bases: either ALL delegated functions, with the exception of updateContract(); 
+		or those functions whose signatures are contained within a hardcoded string. 
+		The updateContract() function can be deleted, but doing so freezes the contract 
+		in its current state, and further addition or removal of delegated functions 
+		no longer will be possible. 
+		Again, user discretion is advised. 
+		
+	The string '.show' in a filename indicates a script that is designed to display the current state 
+		of the application's storage variables. 
+		MSMFactory.show contains script that displays the identity for an MSMFactory contract and 
+		all of the facades that it has created. 
+		MSMState.show contains script that displays the values of state variables for a single facade. 
+		By enabling and disabling specific tests within the file, more or less data can be displayed 
+		according to current needs. 
+		
+		
