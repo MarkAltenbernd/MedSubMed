@@ -3,7 +3,7 @@ The Medium Subscription Mediator (MedSubMed, or more simply MSM), is an Ethereum
 
 Publishers must be approved by the Owner, whereas any active account can become a Subscriber. Publishers who have media content they wish to make available can create Publications, and Subscribers can use Subscriptions to gain access to specific Publications. Thus in relational terms, Subscriptions build many-to-many relationships between Subscribers and Publications. 
 
-Each Subscription contains an array of non-fungible tokens (NFTs) that permit access from one Subscriber to one Publication. Each NFT has an optional expiry, permitting the issuing of periodic, e.g. annual, Subscriptions. The Subscriber can transfer individual NFTs to other accounts, enabling, for example, the manager of a brokerage office to buy in bulk Subscriptions to the Wall Street Journal and then hand them out to individual brokers. The NFTs are based on the OpenZepplin ERC721 contracts. 
+Each Subscription contains an array of non-fungible tokens (NFTs) that permit access from one Subscriber to one Publication. Each NFT has an optional expiry, permitting the issuing of periodic, e.g. annual, Subscriptions. The Subscriber can transfer individual NFTs to other accounts, enabling, for example, the manager of a brokerage office to buy in bulk Subscriptions to the Wall Street Journal and then hand them out to individual brokers. The NFTs are based on the OpenZeppelin ERC721 contracts. 
 
 # Architecture Overview #
 MSM comprises a small factory contract, MSMFactory, whose sole function is to create and maintain a list of a façade contracts, MSMFacade; those several façades are each ÐApp’s face to the world; and a set of MSM application contracts that contain the ÐApp’s specific functionality. 
