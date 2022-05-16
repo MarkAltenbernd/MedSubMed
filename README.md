@@ -1,14 +1,20 @@
-# Media Subscription Mediator Distributed Application
-# Description #
+# Mediator Subscription Mediator – What It Is and What It Is Not #
+Media Subscription Mediator (MedSubMed or simply MSM) is not conceived as a commercial product. Rather it is a training challenge that I have defined for myself to help me become proficient with Ethereum and Solidity, as well as collateral technologies. 
+
+I have long believed that the only way to really learn a technology is to build an application end-to-end. Tutorials and lab exercises can be useful for gaining initial access to a new technology, but only a sustained development effort can lead to mastery. 
+
+In evaluating MSM, please focus on the technical design of the ÐApp and the quality of the Solidity and JavaScript code. Please try not to focus on product definition and strategy, as there really isn’t any. 
+
+# Media Subscription Mediator Distributed Application – Description #
 The Media Subscription Mediator is a managed distributed application that a media Publisher uses to mediate anonymous Subscription access to Publications comprising various kinds of media that he owns, manages, and/or maintains. 
 
-Media Subscription Mediator (MedSubMed or simply MSM) is a distributed Ethereum application (a ÐApp) used as an underlying engine that facilitates the creation and management of Internet-based applications that mediate subscriptions to media content. The MSM engine is run by an MSM Owner. For his implementation, each Owner should create and enforce application policy, create an Internet-based front-end application UI, and select an external DBMS to store subscription content. 
+MSM is a distributed Ethereum application (a ÐApp) used as an underlying engine that facilitates the creation and management of Internet-based applications that mediate subscriptions to media content. The MSM engine is run by an MSM Owner. For his implementation, each Owner should create and enforce application policy, create an Internet-based front-end application UI, and select an external DBMS to store subscription content. 
 
 MSM contemplates three classes of users in addition to the Owner: Managers, Publishers, and Subscribers; all must be holders of Ethereum Externally Owner Accounts (EOAs) on the same Ethereum network that hosts the MSM ÐApp. 
 
 The Owner uses the MSMFactory contract to create and own a specific instance, or presence, of MSM. The Owner then uses the Factory to create one or more individual MSMFacades. The Façade is the context within which Managers and Publishers are designated and Publications and Subscriptions defined. 
 
-Publishers enroll content via metadata in the MSM system and store content in an external database (possibly with the assistance of the Manager), and Subscribers select content that they wish to view, and they then subscribe to that content. 
+Publishers enroll content via metadata in the MSM system and store content in an external database (possibly with the assistance of the Manager), and Subscribers select content that they wish to view; then they may subscribe to that content. 
 
 Each Publication has the price of a Subscription associated with it. When a Subscription is created, the price is transferred from the Subscriber’s account to the Publisher’s account. In addition a transaction fee is transferred from the Publisher’s EOA to the Manager’s. 
 
