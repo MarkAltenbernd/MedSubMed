@@ -38,7 +38,7 @@ MSM is agnostic about the creation of MediaList and Publication objects. The abi
 
 MSM makes no assumption about the monitoring and management of its enrolled content. It is for the implementing application to make and enforce rules about the nature of permitted content and to screen out offending content, e.g. pornography, political disinformation, and so on. 
 
-The implementing applications also is responsible for providing access to external software that renders the Publication’s content. 
+The implementing application also is responsible for providing access to external software that renders the Publication’s content. 
 
 When  enrolling content into MedSubMed, the Publisher associates each element of content with one or more MediaLists; a single Publication can be contained on many lists. 
 

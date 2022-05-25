@@ -1,5 +1,5 @@
-#How Shareable State Storage Is Engineered 
-###&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;in the Media Subscription Mediator application
+# How Shareable State Storage Is Engineered  
+## in the Media Subscription Mediator application ##
 - Shareable state variables are  defined within a struct within a separate Solidity file, MSMState.sol. Those variables can be of any type, number, and complexity. When it is instantiated within delegate contracts, the struct is named sm.
 - The ERC1538 variables are declared in a struct in their own file, State1538.sol, which is instantiated with the name st within the StateMSM struct named sm in the MSMState.sol shareable state file. Those 1538 variables are referenced with a double-dot qualification: sm.st.some1538Var. Confusing? Examine those two state files and the issue will seem clearer. 
 - Contracts that wish to use MSMModifiers do not specify the MSMState file. Instead they include the MSMModifiers.sol file and then inherit it. Since it contains the importation and instantiation of the state variables, they are available to the inheriting contract without explicit reference, and indeed any attempt to import and/or instantiate them will result in compilation errors. Unfortunately this process obfuscates the actual structure and operation of the state variables. This fact offers an opportunity to improve the ÐApp. 
